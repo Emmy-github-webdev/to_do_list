@@ -1,3 +1,4 @@
+import './css/style.css';
 // select the element
 
 // const clear = document.querySelector('.clear');
