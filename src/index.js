@@ -1,80 +1,95 @@
+/* eslint-disable import/no-cycle */
 import './css/style.css';
-// select the element
+import completeToDo from './completed';
 
-// const clear = document.querySelector('.clear');
-// const dateElement = document.getElementById('date');
+// select the element
 const list = document.getElementById('list');
 const input = document.getElementById('input');
 
-// Define classes
-const CHECK = 'fa-check-circle';
+//classes names
 const UNCHECK = 'fa-circle-thin';
+const CHECK = 'fa-check-circle';
 const LINE_THROUGH = 'lineThrough';
 
-// Create variables
-const LIST = [];
-let id = 0;
+//variables
+let LIST = [], id = 0;
 
-// Add to do function
+//get item from localstorage
+let data = localStorage.getItem("TODO");
+
+//check if there is data in localstorage
+if(data){
+  LIST = JSON.parse(data);
+  id = LIST.length; //set the id to the last one in the list
+  loadList(LIST); //load the list to the user interface
+}else {
+  //check if there is no data in localstorage
+  LIST = [];
+  id = 0;
+}
+
+//load items to the user's interface
+function loadList(array){
+  array.forEach(function(item){
+    addToDo(item.name, item.id, item.done, item.trash);
+  });
+}
+
+//add to do function
+
 function addToDo(toDo, id, done, trash) {
-  if (trash) { return; }
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : '';
-  const item = `
-    <li class="item">
-      <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-      <p class="text ${LINE}">${toDo}</p>
-      <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
-    </li>
-  `;
 
-  const position = 'afterEnd';
+  if(trash){ return; }
+
+  const DONE = done ? CHECK : UNCHECK;
+  const LINE = done ? LINE_THROUGH : "";
+  const item = `
+          <li class="item">
+            <i class="fa ${DONE} co" job="completed" id="${id}"></i>
+            <p class="text ${LINE}">${toDo}</p>
+            <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
+          </li>
+        `;
+  const position = 'beforeEnd';
   list.insertAdjacentHTML(position, item);
 }
 
-// add an item to the list when enter key is pressed
-document.addEventListener('keyup', (event) => {
-  if (event.keyCode === 13) {
+//add an item to the list when user click the enter key
+document.addEventListener('keyup', function(event) {
+  if(event.keyCode == 13) {
     const toDo = input.value;
-    // if the input isn't empty
-    if (toDo) {
+
+    //check if the input isn't empty
+    if(toDo){
       addToDo(toDo, id, false, false);
+
       LIST.push({
         name: toDo,
-        id,
+        id: id,
         done: false,
-        trash: false,
+        trash: false
       });
-      id += 1;
+      //Add item to localstorage
+      localStorage.setItem("TODO", JSON.stringify(LIST));
+      id++;
     }
-    input.value = '';
+    input.value = "";
   }
 });
 
-// complete to do
-function completeToDo(element) {
-  element.classList.toggle(CHECK);
-  element.classList.toggle(UNCHECK);
-  element.parentNode.querySelector('.text').classList.toggle(LINE_THROUGH);
-
-  LIST[element.id].done = !LIST[element.id].done;
-}
-
-// remove to do
-function removeToDo(element) {
-  element.parentNode.parentNode.removeChild(element.parentNode);
-
-  LIST[element.id].trash = true;
-}
-
-// target the items created dynamically
-list.addEventListener('click', (event) => {
+list.addEventListener("click", function(event){
   const element = event.target;
   const elementJob = element.attributes.job.value;
 
-  if (elementJob === 'complete') {
+  if(elementJob == "completed"){
     completeToDo(element);
-  } else if (elementJob === 'delete') {
-    removeToDo(element);
-  }
+  } 
+  // else if (elementJob == "delete"){
+  //   removeToDo(element);
+  //   localStorage.clear(element);
+  // }
+  //Update localstorage
+localStorage.setItem("TODO", JSON.stringify(LIST));
 });
+
+export {LIST};

@@ -11,28 +11,24 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Today's To-Do </h1>
+      <h1>To-Do List</h1>
       <div class="clear">
         <i class="fa fa-refresh"></i>
       </div>
     </div>
-    <br>
+    <div id="date"></div>
+    <div class="add-to-do">
+      <i class="fa fa-plus-circle"></i>
+      <input type="text" id="input" placeholder="Add New Task...">
+    </div>
     <div class="content">
-      <div class="add-to-do">
-        <input type="text" id="input" placeholder="Add new task...">
-        <i class="fa fa-plus-circle"></i>
-      </div>
-      <br>
       <ul id="list">
-        
       </ul>
-      <br>
-      <div class="clear-completed-task">
-        <span>Clear completed</span>
-      </div>
+    </div>
+    <div class="clear-completed-task">
+      <span>Clear completed</span>
     </div>
   </div>
-  
   <script src="dist/index.bundle.js"></script>
 </body>
 </html>
