@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,11 @@
   },
   "homepage": "https://github.com/Emmy-github-webdev/to_do_list#readme",
   "dependencies": {
+    "css-loader": "^6.5.0",
     "lodash": "^4.17.21",
-    "webpack": "^5.61.0"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.61.0",
+    "webpack-dev-server": "^4.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
