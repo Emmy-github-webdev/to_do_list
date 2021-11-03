@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Emmy-github-webdev/to_do_list#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "webpack": "^5.61.0"
+    "webpack": "^5.61.0",
+    "webpack-dev-server": "^4.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
