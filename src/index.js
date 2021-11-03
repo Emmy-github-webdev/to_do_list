@@ -14,11 +14,6 @@ const LINE_THROUGH = 'lineThrough';
 const LIST = [];
 let id = 0;
 
-// show today's date
-// const options = {weekday : "long", month :"short", day :"numeric"};
-// const today = new Date();
-// dateElement.innerHTML = today.toLocaleDateString("en-us", options);
-
 // Add to do function
 function addToDo(toDo, id, done, trash) {
   if (trash) { return; }
