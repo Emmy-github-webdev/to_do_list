@@ -10,7 +10,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 - Major languages: HTML and CSS,
 - Frameworks: N/A
-- Technologies used: Web services
+- Technologies used: Web services, webpack
 
 
 # Live Demo
