@@ -71,8 +71,7 @@ window.onload = () => {
   }
 };
 
-//clear localstorage
-clearAllTask.addEventListener('click', function() {
- localStorage.clear();
- location.reload()
+// clear localstorage
+clearAllTask.addEventListener('click', () => {
+  localStorage.clear();
 });
