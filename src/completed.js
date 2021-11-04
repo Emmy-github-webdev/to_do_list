@@ -1,19 +1,49 @@
-/* eslint-disable import/no-cycle */
-import './css/style.css';
-import LIST from './index.js';
+import ToDoList from './to-do-list';
 
-// classes names
-const UNCHECK = 'fa-circle-thin';
-const CHECK = 'fa-check-circle';
-const LINE_THROUGH = 'lineThrough';
+const clearButton = document.getElementById('clear');
 
-// complete to do
-function completeToDo(element) {
-  element.classList.toggle(CHECK);
-  element.classList.toggle(UNCHECK);
-  element.parentNode.querySelector('.text').classList.toggle(LINE_THROUGH);
+const taskCompleted = (id, checked) => {
+  const taskSelected = document.getElementById(`edit-task-${id}`);
+  const tasks = ToDoList.currentTasks;
+  const newArrayOfTasks = [];
 
-  LIST[element.id].done = !LIST[element.id].done;
-}
+  if (checked) {
+    taskSelected.style.textDecoration = 'line-through';
+    taskSelected.style.color = 'gray';
 
-export default completeToDo;
+    for (let i = 0; i < tasks.length; i += 1) {
+      if (tasks[i].index === id) {
+        tasks[i].completed = true;
+        newArrayOfTasks.push(tasks[i]);
+      } else {
+        newArrayOfTasks.push(tasks[i]);
+      }
+    }
+    ToDoList.newArray = newArrayOfTasks;
+  } else {
+    taskSelected.style.textDecoration = 'none';
+    taskSelected.style.color = 'black';
+    for (let i = 0; i < tasks.length; i += 1) {
+      if (tasks[i].index === id) {
+        tasks[i].completed = false;
+        newArrayOfTasks.push(tasks[i]);
+      } else {
+        newArrayOfTasks.push(tasks[i]);
+      }
+    }
+    ToDoList.newArray = newArrayOfTasks;
+  }
+  localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
+
+  const checkCompleted = ToDoList.currentTasks.filter((task) => task.completed === true);
+
+  if (checkCompleted.length) {
+    clearButton.classList.remove('clear-notActive');
+    clearButton.classList.add('clear-active');
+  } else {
+    clearButton.classList.remove('clear-active');
+    clearButton.classList.add('clear-notActive');
+  }
+};
+
+export default taskCompleted;

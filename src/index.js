@@ -1,97 +1,77 @@
 /* eslint-disable import/no-cycle */
 import './css/style.css';
-import completeToDo from './completed.js';
+import taskCompleted from './completed';
+import addTaskToList from './addTask';
+import ToDoList from './to-do-list';
+import removeCompleteTasksFromList from './removeCompletedTask';
+import editTask from './editToDo';
+import removeOnetask from './removeATask';
 
-// select the element
-// const clear = document.querySelector('.clear');
-const list = document.getElementById('list');
-const input = document.getElementById('input');
+const input = document.getElementById('addNewInput');
+const icon = document.getElementById('addNewIcon');
+const taskContainer = document.getElementById('tasks');
+const clearButton = document.getElementById('clear');
+const clearAllTask = document.querySelector('.clear-all-task');
 
-// classes names
-const UNCHECK = 'fa-circle-thin';
-const CHECK = 'fa-check-circle';
-const LINE_THROUGH = 'lineThrough';
-
-// variables
-/* eslint-disable import/no-mutable-exports */
-let LIST = [];
-let id = 0;
-
-// add to do function
-
-function addToDo(toDo, id, done, trash) {
-  if (trash) { return; }
-
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : '';
-  const item = `
-          <li class="item">
-            <i class="fa ${DONE} co" job="completed" id="${id}"></i>
-            <p class="text ${LINE}">${toDo}</p>
-            <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
-          </li>
-        `;
-  const position = 'beforeEnd';
-  list.insertAdjacentHTML(position, item);
-}
-
-// get item from localstorage
-const data = localStorage.getItem('TODO');
-
-// load items to the user's interface
-function loadList(array) {
-  array.forEach((item) => {
-    addToDo(item.name, item.id, item.done, item.trash);
-  });
-}
-
-// check if there is data in localstorage
-if (data) {
-  LIST = JSON.parse(data);
-  id = LIST.length; // set the id to the last one in the list
-  loadList(LIST); // load the list to the user interface
-} else {
-  // check if there is no data in localstorage
-  LIST = [];
-  id = 0;
-}
-
-// add an item to the list when user click the enter key
-document.addEventListener('keyup', (event) => {
-  if (event.keyCode === 13) {
-    const toDo = input.value;
-
-    // check if the input isn't empty
-    if (toDo) {
-      addToDo(toDo, id, false, false);
-
-      LIST.push({
-        name: toDo,
-        id,
-        done: false,
-        trash: false,
-      });
-      // Add item to localstorage
-      localStorage.setItem('TODO', JSON.stringify(LIST));
-      id += 1;
+window.onload = () => {
+  let readyToClear = false;
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      addTaskToList();
     }
-    input.value = '';
+  });
+
+  icon.addEventListener('click', addTaskToList);
+
+  clearButton.addEventListener('click', removeCompleteTasksFromList);
+
+  const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+
+  if (savedTasks && savedTasks.length) {
+    clearButton.style.display = 'flex';
+
+    ToDoList.newArray = savedTasks;
+    for (let i = 0; i < savedTasks.length; i += 1) {
+      const newTask = `<div class="section" id="${savedTasks[i].index}">
+        <div class="checkbox">
+          <input  ${savedTasks[i].completed ? 'checked' : ''} type="checkbox" id="checkbox-${savedTasks[i].index}" />
+          <input type="text" value="${savedTasks[i].description}" id="edit-task-${savedTasks[i].index}" ${savedTasks[i].completed ? "style='text-decoration: line-through; color: gray'" : ''} class="new-input" maxlength="30" />
+          </div>
+          <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${savedTasks[i].index}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${savedTasks[i].index}"></ion-icon>
+
+      </div>`;
+
+      taskContainer.insertAdjacentHTML('beforeend', newTask);
+
+      const checkbox = document.getElementById(`checkbox-${savedTasks[i].index}`);
+      checkbox.addEventListener('change', function listener() {
+        taskCompleted(savedTasks[i].index, this.checked);
+      });
+
+      const editTaskIcon = document.getElementById(`edit-task-${savedTasks[i].index}`);
+      editTaskIcon.addEventListener('click', function edit() {
+        editTask(savedTasks[i].index, this.click);
+      });
+
+      const removeOne = document.getElementById(`remove-this-${savedTasks[i].index}`);
+      removeOne.addEventListener('click', function removeOne() {
+        removeOnetask(savedTasks[i].index, this.click);
+      });
+
+      if (savedTasks[i].completed) {
+        readyToClear = true;
+      }
+    }
+    if (readyToClear) {
+      clearButton.classList.remove('clear-notActive');
+      clearButton.classList.add('clear-active');
+    }
   }
+};
+
+// clear localstorage
+clearAllTask.addEventListener('click', () => {
+  localStorage.clear();
 });
-
-list.addEventListener('click', (event) => {
-  const element = event.target;
-  const elementJob = element.attributes.job.value;
-
-  if (elementJob === 'completed') {
-    completeToDo(element);
-  }
-  // else if (elementJob == "delete"){
-  //   removeToDo(element);
-  //   localStorage.clear(element);
-  // }
-  // Update localstorage
-  localStorage.setItem('TODO', JSON.stringify(LIST));
-});
-
-export { LIST as default };
