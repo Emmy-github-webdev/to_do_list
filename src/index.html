@@ -9,26 +9,31 @@
   <title>To Do List</title>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>To-Do List</h1>
-      <div class="clear">
-        <i class="fa fa-refresh"></i>
-      </div>
+  <div class="card">
+    <div class="section">
+      <h1 class="title">Today's To Do</h1>
+      <ion-icon name="refresh-outline" class="icon clear-all-task"></ion-icon>
     </div>
-    <div id="date"></div>
-    <div class="add-to-do">
-      <i class="fa fa-plus-circle"></i>
-      <input type="text" id="input" placeholder="Add New Task...">
+
+    <div class="section">
+    <input class="new-input" id="addNewInput" placeholder="Add New Task..."/>
+    <ion-icon name="add-outline" id="addNewIcon" class="icon"></ion-icon>
     </div>
-    <div class="content">
-      <ul id="list">
-      </ul>
+
+    <div id="tasks">
+      
     </div>
-    <div class="clear-completed-task">
-      <span>Clear completed</span>
+    <div class="clear-notActive" id="clear">
+      <span>Clear all completed</span>
     </div>
   </div>
-  <script src="dist/index.bundle.js"></script>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
 </body>
 </html>

@@ -1,27 +1,73 @@
-/* eslint-disable import/no-cycle */
-import './css/style.css';
-const list = document.getElementById('list');
+import ToDoList from './to-do-list';
+import taskCompleted from './completed';
+import editTask from './editToDo';
+import removeOnetask from './removeATask';
 
-// classes names
-const UNCHECK = 'fa-circle-thin';
-const CHECK = 'fa-check-circle';
-const LINE_THROUGH = 'lineThrough';
+const input = document.getElementById('addNewInput');
+const taskContainer = document.getElementById('tasks');
+const clearButton = document.getElementById('clear');
 
-// add to do function
-function addToDo(toDo, id, done, trash) {
-  if (trash) { return; }
+const maxIdValue = (ToDoList) => {
+  const ids = ToDoList.map((task) => task.index);
+  const sorted = ids.sort((a, b) => a - b);
+  return sorted[sorted.length - 1] + 1;
+};
 
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : '';
-  const item = `
-          <li class="item">
-            <i class="fa ${DONE} co" job="completed" id="${id}"></i>
-            <p class="text ${LINE}">${toDo}</p>
-            <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
-          </li>
-        `;
-  const position = 'beforeEnd';
-  list.insertAdjacentHTML(position, item);
-}
+const addTaskToList = () => {
+  const validation = input.classList;
+  let id;
+  if (ToDoList.currentTasks.length) {
+    id = maxIdValue(ToDoList.currentTasks);
+  } else {
+    id = 0;
+  }
 
-export default addToDo;
+  if (input.value.length) {
+    validation.remove('errorInput');
+    validation.add('new-input');
+
+    const newTask = `<div class="section" id="${id}">
+        <div class="checkbox">
+          <input  type="checkbox" id="checkbox-${id}" />
+          <input type="text" value="${input.value}" id="edit-task-${id}" class="new-input" maxlength="30" />
+          </div>
+          <ion-icon name="ellipsis-vertical-outline" class="icon" id="edit-${id}"></ion-icon>
+
+        <ion-icon name="trash-outline" class="icon displayNotActive" id="remove-this-${id}"></ion-icon>
+
+      </div>`;
+
+    taskContainer.insertAdjacentHTML('beforeend', newTask);
+
+    const checkbox = document.getElementById(`checkbox-${id}`);
+    checkbox.addEventListener('change', function listener() {
+      taskCompleted(id, this.checked);
+    });
+
+    const editTaskIcon = document.getElementById(`edit-task-${id}`);
+    editTaskIcon.addEventListener('click', function edit() {
+      editTask(id, this.click);
+    });
+
+    const removeOne = document.getElementById(`remove-this-${id}`);
+    removeOne.addEventListener('click', function removeOne() {
+      removeOnetask(id, this.click);
+    });
+
+    ToDoList.updateTasks = {
+      index: id,
+      description: input.value,
+      completed: false,
+    };
+
+    localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
+
+    input.value = '';
+    clearButton.style.display = 'flex';
+  } else {
+    validation.remove('new-input');
+    validation.add('errorInput');
+  }
+};
+
+export default addTaskToList;
