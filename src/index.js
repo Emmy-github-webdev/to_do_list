@@ -1,39 +1,20 @@
 /* eslint-disable import/no-cycle */
 import './css/style.css';
 import completeToDo from './completed.js';
+import addToDo from './addTask.js';
+import removeToDo from './removeATask';
 
 // select the element
-// const clear = document.querySelector('.clear');
-const list = document.getElementById('list');
+const clear = document.querySelector('.clear');
 const input = document.getElementById('input');
+const clearCompletedTask = document.querySelector('.clear-completed-task');
+const list = document.getElementById('list');
 
-// classes names
-const UNCHECK = 'fa-circle-thin';
-const CHECK = 'fa-check-circle';
-const LINE_THROUGH = 'lineThrough';
 
 // variables
 /* eslint-disable import/no-mutable-exports */
 let LIST = [];
 let id = 0;
-
-// add to do function
-
-function addToDo(toDo, id, done, trash) {
-  if (trash) { return; }
-
-  const DONE = done ? CHECK : UNCHECK;
-  const LINE = done ? LINE_THROUGH : '';
-  const item = `
-          <li class="item">
-            <i class="fa ${DONE} co" job="completed" id="${id}"></i>
-            <p class="text ${LINE}">${toDo}</p>
-            <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
-          </li>
-        `;
-  const position = 'beforeEnd';
-  list.insertAdjacentHTML(position, item);
-}
 
 // get item from localstorage
 const data = localStorage.getItem('TODO');
@@ -55,6 +36,12 @@ if (data) {
   LIST = [];
   id = 0;
 }
+
+//clear the localstorage
+clear.addEventListener("click", function(){
+  localStorage.clear();
+  location.reload();
+})
 
 // add an item to the list when user click the enter key
 document.addEventListener('keyup', (event) => {
@@ -86,12 +73,13 @@ list.addEventListener('click', (event) => {
   if (elementJob === 'completed') {
     completeToDo(element);
   }
-  // else if (elementJob == "delete"){
-  //   removeToDo(element);
-  //   localStorage.clear(element);
-  // }
-  // Update localstorage
-  localStorage.setItem('TODO', JSON.stringify(LIST));
+  else if (elementJob == "delete"){
+    removeToDo(element);
+    localStorage.clear(element);
+  }
+    // Update localstorage
+    localStorage.setItem('TODO', JSON.stringify(LIST));
 });
+
 
 export { LIST as default };
