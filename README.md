@@ -5,6 +5,10 @@ To-Do List is a project that showcases my Javascript DOM manipulation experience
 
 If you like what you see and have a project you need coded, don't hesitate to contact me.
 
+# Responsiveness
+
+![To-Do List Responsiveness](images/to-do-img.PNG)
+
 # Built With
 
 
@@ -15,7 +19,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 # Live Demo
 
-[Live Demo Link](https://github.com/Emmy-github-webdev/to_do_list).
+[Live Demo Link](https://emmy-github-webdev.github.io/to_do_list/dist/).
 
 # Getting Started
 
@@ -27,6 +31,7 @@ To get a local copy up and running follow these simple example steps.
 ## Setup
 - Install code editor
 - Install Git bash
+- Install webpack
 ## Install
 - clone the [project](https://github.com/Emmy-github-webdev/to_do_list).
 ## Usage
@@ -38,9 +43,9 @@ To get a local copy up and running follow these simple example steps.
 - Navigate to page in the prject settings and publish
 # Authors
 
-- GitHub: [@ogaemmanuel](https://github.com/Emmy-github-webdev).
-- Twitter: [@ogaemmanuel](@ogaemmanueloga).
-- LinkedIn: [@ogaemmanuel](https://github.com/Emmy-github-webdev/lint-test).
+- GitHub: [Emmy-github-webdev](https://github.com/Emmy-github-webdev).
+- Twitter: [@ogaemmanuel](https://twitter.com/OgaemmanuelOga).
+- LinkedIn: [@ogaemmanuel](https://www.linkedin.com/in/emmanuel-oga-16171584/).
 
 # Contributing
 
