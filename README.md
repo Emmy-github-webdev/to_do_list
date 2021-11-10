@@ -13,7 +13,6 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 
 - Major languages: HTML and CSS,
-- Frameworks: N/A
 - Technologies used: Web services, webpack
 
 
@@ -37,7 +36,8 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 - Test your GitHub flow, a linter and professional documentation ability
 ## Run tests
-- Open the project with code editor or double click the index.html file to run the project
+- Run npm run build to rebuild the project
+- Run npm run start to run the project
 ## Deployment
 - Push the project to your GitHub repo
 - Navigate to page in the prject settings and publish
