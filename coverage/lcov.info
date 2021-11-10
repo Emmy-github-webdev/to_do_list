@@ -1,5 +1,5 @@
 TN:
-SF:src\to-do-list.js
+SF:src/to-do-list.js
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
@@ -18,7 +18,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\jestFolder\part1\addTask.js
+SF:src/jestFolder/part1/addTask.js
 FN:6,(anonymous_0)
 FN:7,(anonymous_1)
 FN:8,(anonymous_2)
