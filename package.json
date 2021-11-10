@@ -1,6 +1,11 @@
 {
   "name": "to_do_list",
   "version": "1.0.0",
+  "jest": {
+    "setupFiles" : [
+      "./src/jestFolder/globalHTMLmock.js"
+    ]
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -32,10 +37,11 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
+    "global-jsdom": "8.3.0",
     "hint": "^6.1.7",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.3.1",
-    "jsdom": "^18.0.1",
+    "jsdom": "18.0.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
