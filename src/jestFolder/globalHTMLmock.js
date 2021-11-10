@@ -2,7 +2,6 @@ const jsdom = require('jsdom');
 
 const { JSDOM } = jsdom;
 
-
 const dom = new JSDOM(`<!DOCTYPE html><div class="card">
 <div class="section">
   <h1 class="title">Today's To Do</h1>

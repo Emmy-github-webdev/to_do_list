@@ -41,10 +41,10 @@ const addTaskToList = () => {
       completed: false,
     };
 
-    //Remove localStorage as requested
+    // Remove localStorage as requested
     // localStorage.setItem('tasks', JSON.stringify(ToDoList.currentTasks));
 
-    //Mock a storage object to "imitate" localStorage operations. 
+    // Mock a storage object to "imitate" localStorage operations.
     Object.defineProperty(window, 'localStorage', {
       value: ToDoList.currentTasks,
     });

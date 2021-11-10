@@ -59,7 +59,7 @@ describe('Add tasks to TasksList', () => {
     const taskContainer = global.document.getElementById('tasks');
     const taskCounter = taskContainer.getElementsByClassName('section');
 
-    //Add 3 valid tasks
+    // Add 3 valid tasks
     expect(ToDoList.currentTasks.length).toBe(taskCounter.length);
     expect(window.localStorage.length).toBe(taskCounter.length);
 

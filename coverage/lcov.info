@@ -5,11 +5,11 @@ FN:9,(anonymous_1)
 FN:13,(anonymous_2)
 FNF:3
 FNH:3
-FNDA:99,(anonymous_0)
+FNDA:98,(anonymous_0)
 FNDA:23,(anonymous_1)
 FNDA:16,(anonymous_2)
 DA:1,2
-DA:6,99
+DA:6,98
 DA:10,23
 DA:14,16
 LF:4
@@ -59,7 +59,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:src\jestFolder\part2\delete.js
+SF:src\jestFolder\part1\delete.js
 FN:6,(anonymous_0)
 FN:7,(anonymous_1)
 FN:10,(anonymous_2)

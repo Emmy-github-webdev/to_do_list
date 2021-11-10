@@ -1,5 +1,5 @@
 import ToDoList from '../../to-do-list';
-import addTaskToList from '../part1/addTask';
+import addTaskToList from './addTask';
 import { removeOnetask, removeCompleteTasksFromList } from './delete';
 
 describe('Remove only one element when call to function removeOnetask', () => {
@@ -47,13 +47,13 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
   });
 
   test('Add 4 valid tasks, then set last 2 to completed === true, and delete all completed, toDoArray and localStorage length should be 2', () => {
-    global.document.getElementById("addNewInput").value = "NewTask1";
+    global.document.getElementById('addNewInput').value = 'NewTask1';
     addTaskToList();
-    global.document.getElementById("addNewInput").value = 'NewTask2';
+    global.document.getElementById('addNewInput').value = 'NewTask2';
     addTaskToList();
-    global.document.getElementById("addNewInput").value = 'NewTask3';
+    global.document.getElementById('addNewInput').value = 'NewTask3';
     addTaskToList();
-    global.document.getElementById("addNewInput").value = 'NewTask4';
+    global.document.getElementById('addNewInput').value = 'NewTask4';
     addTaskToList();
 
     const toDoArray = ToDoList.currentTasks;
@@ -92,9 +92,9 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
   test('Add 1 valid tasks, then check if it is defined, Check the DOM for only one tasks printed in the DOM (each task element starts with the class="section")', () => {
     global.document.getElementById('addNewInput').value = 'NewTask1';
     addTaskToList();
-    
-    const toDoArray = ToDoList.currentTasks;
-    
+
+    // const toDoArray = ToDoList.currentTasks;
+
     removeCompleteTasksFromList();
 
     const taskContainer = global.document.getElementById('tasks');
@@ -104,6 +104,6 @@ describe('Remove all completed tasks when call to function removeCompleteTasksFr
   });
 
   test('Remove all completed when toDoList array length is 0 return undefined', () => {
-    expect(removeCompleteTasksFromList()).toBeUndefined;
+    expect(removeCompleteTasksFromList()).toBe(undefined);
   });
 });
