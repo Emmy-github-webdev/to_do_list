@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636653879029" clover="3.2.0">
-  <project timestamp="1636653879029" name="All files">
+<coverage generated="1636657950578" clover="3.2.0">
+  <project timestamp="1636657950578" name="All files">
     <metrics statements="98" coveredstatements="91" conditionals="26" coveredconditionals="21" methods="15" coveredmethods="15" elements="139" coveredelements="127" complexity="0" loc="98" ncloc="98" packages="3" files="5" classes="5"/>
     <package name="src">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="to-do-list.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\to-do-list.js">
+      <file name="to-do-list.js" path="/home/bunbee/Microverse/javascript/tests/to_do_list/src/to-do-list.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="4" type="stmt"/>
         <line num="6" count="180" type="stmt"/>
@@ -14,7 +14,7 @@
     </package>
     <package name="src.jestFolder.part1">
       <metrics statements="62" coveredstatements="55" conditionals="18" coveredconditionals="13" methods="10" coveredmethods="10"/>
-      <file name="addTask.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part1\addTask.js">
+      <file name="addTask.js" path="/home/bunbee/Microverse/javascript/tests/to_do_list/src/jestFolder/part1/addTask.js">
         <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
@@ -37,7 +37,7 @@
         <line num="52" count="43" type="stmt"/>
         <line num="55" count="7" type="stmt"/>
       </file>
-      <file name="delete.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part1\delete.js">
+      <file name="delete.js" path="/home/bunbee/Microverse/javascript/tests/to_do_list/src/jestFolder/part1/delete.js">
         <metrics statements="42" coveredstatements="35" conditionals="14" coveredconditionals="9" methods="6" coveredmethods="6"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -85,7 +85,7 @@
     </package>
     <package name="src.jestFolder.part2">
       <metrics statements="32" coveredstatements="32" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
-      <file name="completed.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part2\completed.js">
+      <file name="completed.js" path="/home/bunbee/Microverse/javascript/tests/to_do_list/src/jestFolder/part2/completed.js">
         <metrics statements="23" coveredstatements="23" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="8" type="stmt"/>
@@ -111,7 +111,7 @@
         <line num="32" count="3" type="stmt"/>
         <line num="34" count="8" type="stmt"/>
       </file>
-      <file name="editToDo.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part2\editToDo.js">
+      <file name="editToDo.js" path="/home/bunbee/Microverse/javascript/tests/to_do_list/src/jestFolder/part2/editToDo.js">
         <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="4" type="stmt"/>

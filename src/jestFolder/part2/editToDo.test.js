@@ -1,7 +1,7 @@
-import editTask from './editToDo';
-import addTaskToList from '../Part1/addTask';
+import editTask from './editToDo.js';
+import addTaskToList from '../part1/addTask.js';
 
-import ToDoList from '../../to-do-list';
+import ToDoList from '../../to-do-list.js';
 
 describe('Edit tasks', () => {
   beforeEach(() => {

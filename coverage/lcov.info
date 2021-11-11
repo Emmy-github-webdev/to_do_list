@@ -1,5 +1,5 @@
 TN:
-SF:src\to-do-list.js
+SF:src/to-do-list.js
 FN:5,(anonymous_0)
 FN:9,(anonymous_1)
 FN:13,(anonymous_2)
@@ -18,7 +18,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\jestFolder\part1\addTask.js
+SF:src/jestFolder/part1/addTask.js
 FN:6,(anonymous_0)
 FN:7,(anonymous_1)
 FN:8,(anonymous_2)
@@ -59,7 +59,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:src\jestFolder\part1\delete.js
+SF:src/jestFolder/part1/delete.js
 FN:6,(anonymous_0)
 FN:7,(anonymous_1)
 FN:10,(anonymous_2)
@@ -136,7 +136,7 @@ BRF:14
 BRH:9
 end_of_record
 TN:
-SF:src\jestFolder\part2\completed.js
+SF:src/jestFolder/part2/completed.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:1
@@ -176,7 +176,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:src\jestFolder\part2\editToDo.js
+SF:src/jestFolder/part2/editToDo.js
 FN:3,(anonymous_0)
 FNF:1
 FNH:1
