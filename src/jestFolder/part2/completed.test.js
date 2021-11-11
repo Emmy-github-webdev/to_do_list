@@ -2,7 +2,7 @@ import addTaskToList from '../part1/addTask';
 
 import ToDoList from '../../to-do-list';
 
-import taskCompleted from './completed';
+import taskCompleted from './completed.js';
 
 describe('Completed tasks from TasksList', () => {
   beforeEach(() => {
