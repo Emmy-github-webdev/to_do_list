@@ -1,4 +1,4 @@
-import addTaskToList from '../Part1/addTask';
+import addTaskToList from '../part1/addTask';
 
 import ToDoList from '../../to-do-list';
 
