@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636582540910" clover="3.2.0">
-  <project timestamp="1636582540910" name="All files">
-    <metrics statements="66" coveredstatements="59" conditionals="18" coveredconditionals="13" methods="13" coveredmethods="13" elements="97" coveredelements="85" complexity="0" loc="66" ncloc="66" packages="2" files="3" classes="3"/>
+<coverage generated="1636653416157" clover="3.2.0">
+  <project timestamp="1636653416157" name="All files">
+    <metrics statements="75" coveredstatements="68" conditionals="20" coveredconditionals="15" methods="14" coveredmethods="14" elements="109" coveredelements="97" complexity="0" loc="75" ncloc="75" packages="3" files="4" classes="4"/>
     <package name="src">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="to-do-list.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\to-do-list.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="6" count="98" type="stmt"/>
-        <line num="10" count="23" type="stmt"/>
-        <line num="14" count="16" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="6" count="126" type="stmt"/>
+        <line num="10" count="31" type="stmt"/>
+        <line num="14" count="23" type="stmt"/>
       </file>
     </package>
     <package name="src.jestFolder.part1">
       <metrics statements="62" coveredstatements="55" conditionals="18" coveredconditionals="13" methods="10" coveredmethods="10"/>
       <file name="addTask.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part1\addTask.js">
         <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="2" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="37" type="stmt"/>
-        <line num="8" count="20" type="stmt"/>
-        <line num="9" count="20" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="30" type="stmt"/>
-        <line num="15" count="30" type="cond" truecount="2" falsecount="0"/>
-        <line num="16" count="20" type="stmt"/>
-        <line num="18" count="10" type="stmt"/>
-        <line num="21" count="30" type="cond" truecount="2" falsecount="0"/>
-        <line num="22" count="23" type="stmt"/>
-        <line num="23" count="23" type="stmt"/>
-        <line num="25" count="23" type="stmt"/>
-        <line num="36" count="23" type="stmt"/>
-        <line num="38" count="23" type="stmt"/>
-        <line num="48" count="23" type="stmt"/>
-        <line num="52" count="23" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="42" type="stmt"/>
+        <line num="8" count="24" type="stmt"/>
+        <line num="9" count="24" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="38" type="stmt"/>
+        <line num="15" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="24" type="stmt"/>
+        <line num="18" count="14" type="stmt"/>
+        <line num="21" count="38" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="31" type="stmt"/>
+        <line num="23" count="31" type="stmt"/>
+        <line num="25" count="31" type="stmt"/>
+        <line num="36" count="31" type="stmt"/>
+        <line num="38" count="31" type="stmt"/>
+        <line num="48" count="31" type="stmt"/>
+        <line num="52" count="31" type="stmt"/>
         <line num="55" count="7" type="stmt"/>
       </file>
       <file name="delete.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part1\delete.js">
@@ -81,6 +81,21 @@
         <line num="84" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="90" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.jestFolder.part2">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="editToDo.js" path="C:\Users\OcheEmmy\Desktop\microverse-projects\to_do_list\src\jestFolder\part2\editToDo.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="8" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
       </file>
     </package>
   </project>
