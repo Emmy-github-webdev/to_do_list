@@ -1,10 +1,15 @@
 {
   "name": "to_do_list",
   "version": "1.0.0",
+  "jest": {
+    "setupFiles": [
+      "./src/jestFolder/globalHTMLmock.js"
+    ]
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "webpack serve --open",
     "build": "webpack"
   },
@@ -21,18 +26,21 @@
   "homepage": "https://github.com/Emmy-github-webdev/to_do_list#readme",
   "dependencies": {
     "css-loader": "^6.5.0",
+    "jsdom": "^18.0.1",
     "lodash": "^4.17.21",
     "style-loader": "^3.3.1",
     "webpack": "^5.61.0",
     "webpack-dev-server": "^4.4.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
     "hint": "^6.1.7",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
